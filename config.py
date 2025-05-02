@@ -6,31 +6,31 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Bot Configuration
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-API_ID = int(os.getenv("API_ID"))
-API_HASH = os.getenv("API_HASH")
+BOT_TOKEN = os.getenv("7674845797:AAFc9pErEgOsfOO4qF28kzJrGANXlICL-4g")
+API_ID = int(os.getenv("27294940"))
+API_HASH = os.getenv("67dea18182fcb410bd8c4e1a336d8c9e")
 
 # Database Configuration
-MONGO_URI = os.getenv("MONGO_URI")
+MONGO_URI = os.getenv("mongodb+srv://poisondeath1921:N8pGonrmdVx1mzBB@cluster0.3bdouge.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 DATABASE_NAME = os.getenv("DATABASE_NAME")
 
 # Channel Configuration 
-DB_CHANNEL_ID = int(os.getenv("DB_CHANNEL_ID"))
-FORCE_SUB_CHANNEL = int(os.getenv("FORCE_SUB_CHANNEL")) # First force sub channel
-FORCE_SUB_CHANNEL_2 = int(os.getenv("FORCE_SUB_CHANNEL_2", 0)) # Second force sub channel, defaults to 0 if not set
+DB_CHANNEL_ID = int(os.getenv("-1002505082306"))
+FORCE_SUB_CHANNEL = int(os.getenv("-1002276280920")) # First force sub channel
+FORCE_SUB_CHANNEL_2 = int(os.getenv("-1002039617609", 0)) # Second force sub channel, defaults to 0 if not set
 
 # Add a second channel link
 CHANNEL_LINK = os.getenv("CHANNEL_LINK") # First channel link
 CHANNEL_LINK_2 = os.getenv("CHANNEL_LINK_2", "") # Second channel link
 
 # Bot Information
-BOT_USERNAME = os.getenv("BOT_USERNAME")
-BOT_NAME = os.getenv("BOT_NAME")
+BOT_USERNAME = os.getenv("@replica_file_bot")
+BOT_NAME = os.getenv("Replica file bot")
 BOT_VERSION = "1.6"
 
 # Privacy Mode Configuration and codexbotz delete time
 PRIVACY_MODE = os.getenv("PRIVACY_MODE", "off").lower() == "on"
-AUTO_DELETE_TIME = int(os.getenv("AUTO_DELETE_TIME", 30))
+AUTO_DELETE_TIME = int(os.getenv("10", 30))
 
 # Your Modiji Url Api Key Here
 MODIJI_API_KEY = os.getenv("MODIJI_API_KEY")
@@ -50,7 +50,7 @@ PING_TIME = int(os.getenv("PING_TIME")) # Add time_out in seconds
 # Admin IDs - Convert space-separated string to list of integers
 ADMIN_IDS: List[int] = [
     int(admin_id.strip())
-    for admin_id in os.getenv("ADMIN_IDS", "").split()
+    for admin_id in os.getenv("5478765030,7038050465", "").split()
     if admin_id.strip().isdigit()
 ]
 
@@ -159,12 +159,12 @@ Use /help to see available commands!
 ℹ️ **About {bot_name}**
 
 **Version:** `{version}`
-**Developer:** @adarsh2626
+**Developer:** @seasonal_culture
 **Language:** Python
 **Framework:** Pyrogram
 
-📢 **Updates:** @Thealphabotz
-🛠 **Support:** @adarsh2626
+📢 **Updates:** https://t.me/seasonal_culture
+🛠 **Support:** https://t.me/seasonal_culture
 
 **Features:**
 • Secure File Sharing
@@ -177,7 +177,7 @@ Use /help to see available commands!
 
 use /repo to know more info
 
-Made with ❤️ by @adarsh2626
+Made with ❤️ by @seasonal_culture
 """
 
     FILE_TEXT = """
@@ -198,7 +198,7 @@ Made with ❤️ by @adarsh2626
 ⚠️ **Access Restricted!**
 
 Please join our channel to use this bot:
-Bot By @Thealphabotz
+Bot By @seasonal_culture
 
 Click button below, then try again!
 """
