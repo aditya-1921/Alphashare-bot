@@ -217,8 +217,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <details>
 <summary><b>📞 Support</b></summary>
 
-- Channel: [@Thealphabotz](https://t.me/Thealphabotz)
-- Developer: [@adarsh2626](https://t.me/adarsh2626)
+- Channel: [@zeus_replica](https://t.me/zeus_replica)
+- Developer: [@zeus_replica](https://t.me/zeus_replica)
 
 </details>
 
