@@ -226,7 +226,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <summary><b>🙏 Credits</b></summary>
 
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
-- [Adarsh](https://t.me/adarsh2626)
+- [Culture](https://t.me/seasonal_culture)
 - [All Contributors](https://github.com/utkarshdubey2008/AlphaShare/graphs/contributors)
 
 </details>
@@ -243,5 +243,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <p align="center">
   <b>Last Updated: 2025-03-19 16:42:54 UTC</b>
   <br>
-  <i>Made with ❤️ by <a href="https://t.me/adarsh2626">Adarsh</a></i>
+  <i>Made with ❤️ by <a href="https://t.me/Seasonal_culture">Adarsh</a></i>
 </p>
