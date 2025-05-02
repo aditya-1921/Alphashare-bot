@@ -1,3 +1,113 @@
+from typing import List, Dict
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# ─── Bot Configuration ─────────────────────────────────────────────────────────
+BOT_TOKEN    = os.getenv("BOT_TOKEN",    "7674845797:AAFc9pErEgOsfOO4qF28kzJrGANXlICL-4g")
+API_ID       = int(os.getenv("API_ID",       "27294940"))
+API_HASH     = os.getenv("API_HASH",     "67dea18182fcb410bd8c4e1a336d8c9e")
+
+# ─── Database Configuration ────────────────────────────────────────────────────
+MONGO_URI    = os.getenv("MONGO_URI",    "mongodb+srv://poisondeath1921:N8pGonrmdVx1mzBB@cluster0.3bdouge.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_NAME = os.getenv("DATABASE_NAME", "")
+
+# ─── Channel Configuration ─────────────────────────────────────────────────────
+DB_CHANNEL_ID        = int(os.getenv("DB_CHANNEL_ID",        "-1002505082306"))
+FORCE_SUB_CHANNEL    = int(os.getenv("FORCE_SUB_CHANNEL",    "-1002276280920"))
+FORCE_SUB_CHANNEL_2  = int(os.getenv("FORCE_SUB_CHANNEL_2",  "0"))
+
+CHANNEL_LINK   = os.getenv("CHANNEL_LINK",   "")
+CHANNEL_LINK_2 = os.getenv("CHANNEL_LINK_2", "")
+
+# ─── Bot Information ──────────────────────────────────────────────────────────
+BOT_USERNAME = os.getenv("BOT_USERNAME", "@replica_file_bot")
+BOT_NAME     = os.getenv("BOT_NAME",     "Replica file bot")
+BOT_VERSION  = "1.6"
+
+# ─── Privacy / Auto-Delete ─────────────────────────────────────────────────────
+PRIVACY_MODE      = os.getenv("PRIVACY_MODE", "off").lower() == "on"
+AUTO_DELETE_TIME  = int(os.getenv("AUTO_DELETE_TIME", "30"))
+
+# ─── Modiji API Key ───────────────────────────────────────────────────────────
+MODIJI_API_KEY = os.getenv("MODIJI_API_KEY")
+if not MODIJI_API_KEY:
+    print("⚠️ Warning: MODIJI_API_KEY not set in environment variables")
+
+# ─── Support Links ─────────────────────────────────────────────────────────────
+DEVELOPER_LINK = os.getenv("DEVELOPER_LINK", "")
+SUPPORT_LINK   = os.getenv("SUPPORT_LINK",   "")
+
+# ─── Web-Ping (Koyeb/Render) ──────────────────────────────────────────────────
+WEB_SERVER = os.getenv("WEB_SERVER", "True").lower() == "true"
+PING_URL   = os.getenv("PING_URL",   "")
+PING_TIME  = int(os.getenv("PING_TIME", "0"))
+
+# ─── Admin IDs ─────────────────────────────────────────────────────────────────
+# comma-separated list in ENV, e.g. 5478765030,7038050465
+ADMIN_IDS: List[int] = [
+    int(x.strip())
+    for x in os.getenv("ADMIN_IDS", "5478765030,7038050465").split(",")
+    if x.strip().isdigit()
+]
+
+# ─── File limits & types ──────────────────────────────────────────────────────
+MAX_FILE_SIZE = 2_000 * 1024 * 1024  # 2 GB
+
+SUPPORTED_TYPES = [
+    "document", "video", "audio", "photo", "voice",
+    "video_note", "animation"
+]
+
+SUPPORTED_EXTENSIONS = [
+    # Documents
+    "pdf", "txt", "doc", "docx", "xls", "xlsx", "ppt", "pptx",
+    # Code & data
+    "py", "js", "html", "css", "json", "xml", "yaml", "yml", "csv", "md",
+    # Archives
+    "zip", "rar", "7z", "tar", "gz", "bz2",
+    # Media
+    "mp4", "mp3", "m4a", "wav", "avi", "mkv", "flv", "mov", "webm", "3gp", "m4v", "ogg", "opus",
+    # Images
+    "jpg", "jpeg", "png", "gif", "webp", "bmp", "ico",
+    # Apps & executables
+    "apk", "exe", "msi", "deb", "rpm",
+    # Subtitles/logs
+    "srt", "sub", "log", "text"
+]
+
+SUPPORTED_MIME_TYPES = [
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "application/zip",
+    "application/x-rar-compressed",
+    "application/x-7z-compressed",
+    "video/mp4",
+    "audio/mpeg",
+    "audio/mp4",
+    "image/jpeg",
+    "image/png",
+    "image/gif",
+    "application/vnd.android.package-archive",
+    "application/x-executable",
+]
+
+# ─── Messages & Buttons ───────────────────────────────────────────────────────
+class Messages:
+    START_TEXT = """
+🎉 Welcome to {bot_name}! 🎉
+
+Hello {user_mention}! I'm your secure file sharing assistant.
+
+🔐 Key Features:
+• Secure File Sharing
+• Unique Download Links
+• Multiple File Types Support
+• Real-time Tracking
+• Force Subscribe
+
 📢 Join @Thealphabotz for updates!
 👨‍💻 Contact @adarsh2626 for support
 A Open Source Repo :- github.com/utkarshdubey2008/alphashare
