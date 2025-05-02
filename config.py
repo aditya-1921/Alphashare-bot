@@ -6,31 +6,31 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Bot Configuration
-BOT_TOKEN = os.getenv("7674845797:AAFc9pErEgOsfOO4qF28kzJrGANXlICL-4g")
-API_ID = int(os.getenv("27294940"))
-API_HASH = os.getenv("67dea18182fcb410bd8c4e1a336d8c9e")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+API_ID = int(os.getenv("API_ID"))
+API_HASH = os.getenv("API_HASH")
 
 # Database Configuration
-MONGO_URI = os.getenv("mongodb+srv://poisondeath1921:N8pGonrmdVx1mzBB@cluster0.3bdouge.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+MONGO_URI = os.getenv("MONGO_URI")
 DATABASE_NAME = os.getenv("DATABASE_NAME")
 
 # Channel Configuration 
-DB_CHANNEL_ID = int(os.getenv("-1002505082306"))
-FORCE_SUB_CHANNEL = int(os.getenv("-1002276280920")) # First force sub channel
-FORCE_SUB_CHANNEL_2 = int(os.getenv("-1002039617609", 0)) # Second force sub channel, defaults to 0 if not set
+DB_CHANNEL_ID = int(os.getenv("DB_CHANNEL_ID"))
+FORCE_SUB_CHANNEL = int(os.getenv("FORCE_SUB_CHANNEL")) # First force sub channel
+FORCE_SUB_CHANNEL_2 = int(os.getenv("FORCE_SUB_CHANNEL_2", 0)) # Second force sub channel, defaults to 0 if not set
 
 # Add a second channel link
 CHANNEL_LINK = os.getenv("CHANNEL_LINK") # First channel link
 CHANNEL_LINK_2 = os.getenv("CHANNEL_LINK_2", "") # Second channel link
 
 # Bot Information
-BOT_USERNAME = os.getenv("@replica_file_bot")
-BOT_NAME = os.getenv("Replica file bot")
+BOT_USERNAME = os.getenv("BOT_USERNAME")
+BOT_NAME = os.getenv("BOT_NAME")
 BOT_VERSION = "1.6"
 
 # Privacy Mode Configuration and codexbotz delete time
 PRIVACY_MODE = os.getenv("PRIVACY_MODE", "off").lower() == "on"
-AUTO_DELETE_TIME = int(os.getenv("10", 30))
+AUTO_DELETE_TIME = int(os.getenv("AUTO_DELETE_TIME", 30))
 
 # Your Modiji Url Api Key Here
 MODIJI_API_KEY = os.getenv("MODIJI_API_KEY")
@@ -50,7 +50,7 @@ PING_TIME = int(os.getenv("PING_TIME")) # Add time_out in seconds
 # Admin IDs - Convert space-separated string to list of integers
 ADMIN_IDS: List[int] = [
     int(admin_id.strip())
-    for admin_id in os.getenv("5478765030,7038050465", "").split()
+    for admin_id in os.getenv("ADMIN_IDS", "").split()
     if admin_id.strip().isdigit()
 ]
 
@@ -105,11 +105,11 @@ SUPPORTED_MIME_TYPES = [
 
 class Messages:
     START_TEXT = """
-🎉 Welcome to {bot_name}! 🎉
+🎉 **Welcome to {bot_name}!** 🎉
 
 Hello {user_mention}! I'm your secure file sharing assistant.
 
-🔐 Key Features:
+🔐 **Key Features:**
 • Secure File Sharing
 • Unique Download Links
 • Multiple File Types Support
@@ -124,47 +124,49 @@ Use /help to see available commands!
 """
 
     HELP_TEXT = """
-📚 Available Commands  
+📚 **Available Commands**  
 
-👤 User Commands:  
-• /start - Start the bot  
-• /help - Show this menu  
-• /about - Bot details  
-• /short [url] - Shorten a link (e.g., /short example.com)  
+👤 **User Commands:**  
+• `/start` - Start the bot  
+• `/help` - Show this menu  
+• `/about` - Bot details  
+• `/short [url]` - Shorten a link (e.g., `/short example.com`)  
 /repo 
 
-👑 Admin Commands:  
-• /upload - Upload a file (reply to a file)  
-• /stats - View bot statistics  
-• /broadcast - Send a message to all users  
-• /auto_del - Set auto-delete timer
-    🗑 Auto-Delete System:  
+👑 **Admin Commands:**  
+• `/upload` - Upload a file (reply to a file)  
+• `/stats` - View bot statistics  
+• `/broadcast` - Send a message to all users  
+• `/auto_del` - Set auto-delete timer  
+
+
+🗑 **Auto-Delete System:**  
 • Files auto-delete after a set time.  
-• Modify timer using /auto_del.  
+• Modify timer using `/auto_del`.  
 
-🔗 Batch System:  
-• /batch - Group multiple files into one link.  
-• Forward files & reply with /batch.  
+🔗 **Batch System:**  
+• `/batch` - Group multiple files into one link.  
+• Forward files & reply with `/batch`.  
 
 
-🛠 Open Source:  
+🛠 **Open Source:**  
 🔗 [GitHub](https://github.com/utkarshdubey2008/alphashare)  
 
-⚠️ Need Help? Contact [@adarsh2626](https://t.me/adarsh2626)  
+⚠️ **Need Help?** Contact [@adarsh2626](https://t.me/adarsh2626)  
 """
 
     ABOUT_TEXT = """
-ℹ️ About {bot_name}
+ℹ️ **About {bot_name}**
 
-Version: {version}
-Developer: @seasonal_culture
-Language: Python
-Framework: Pyrogram
+**Version:** `{version}`
+**Developer:** @adarsh2626
+**Language:** Python
+**Framework:** Pyrogram
 
-📢 Updates: https://t.me/seasonal_culture
-🛠 Support: https://t.me/seasonal_culture
+📢 **Updates:** @Thealphabotz
+🛠 **Support:** @adarsh2626
 
-Features:
+**Features:**
 • Secure File Sharing
 • Force Subscribe
 • Admin Controls
@@ -175,28 +177,28 @@ Features:
 
 use /repo to know more info
 
-Made with ❤️ by @seasonal_culture
+Made with ❤️ by @adarsh2626
 """
 
     FILE_TEXT = """
-📁 File Details
+📁 **File Details**
 
-Name: {file_name}
-Size: {file_size}
-Type: {file_type}
-Downloads: {downloads}
-Uploaded: {upload_time}
-By: {uploader}
+**Name:** `{file_name}`
+**Size:** {file_size}
+**Type:** {file_type}
+**Downloads:** {downloads}
+**Uploaded:** {upload_time}
+**By:** {uploader}
 
-🔗 Share Link:
-{share_link}
+🔗 **Share Link:**
+`{share_link}`
 """
 
     FORCE_SUB_TEXT = """
-⚠️ Access Restricted!
+⚠️ **Access Restricted!**
 
 Please join our channel to use this bot:
-Bot By @seasonal_culture
+Bot By @Thealphabotz
 
 Click button below, then try again!
 """
@@ -252,10 +254,11 @@ class Progress:
     PROGRESS_BAR = "█"
     EMPTY_PROGRESS_BAR = "░"
     PROGRESS_TEXT = """
-{0} {1}% 
+**{0}** {1}% 
 
-⚡️ Speed: {2}/s
-💫 Done: {3}
-💭 Total: {4}
-⏰ Time Left: {5}
+**⚡️ Speed:** {2}/s
+**💫 Done:** {3}
+**💭 Total:** {4}
+**⏰ Time Left:** {5}
 """
+  
