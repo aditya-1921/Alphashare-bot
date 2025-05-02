@@ -13,8 +13,8 @@ async def repo_command(client: Client, message: Message):
         [
             [InlineKeyboardButton("📂 Source", url="https://github.com/utkarshdubey2008/alphashare")],
             [
-                InlineKeyboardButton("📢 Updates", url="https://t.me/thealphabotz"),
-                InlineKeyboardButton("💬 Support", url="https://t.me/alphabotzchat")
+                InlineKeyboardButton("📢 Updates", url="https://t.me/seasonal_culture"),
+                InlineKeyboardButton("💬 Support", url="https://t.me/seasonal_culture")
             ]
         ]
     )
