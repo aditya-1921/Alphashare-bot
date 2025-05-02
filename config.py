@@ -2,79 +2,88 @@ from typing import List, Dict
 import os
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
-# ─── Bot Configuration ─────────────────────────────────────────────────────────
-BOT_TOKEN    = os.getenv("BOT_TOKEN",    "7674845797:AAFc9pErEgOsfOO4qF28kzJrGANXlICL-4g")
-API_ID       = int(os.getenv("API_ID",       "27294940"))
-API_HASH     = os.getenv("API_HASH",     "67dea18182fcb410bd8c4e1a336d8c9e")
+# Bot Configuration
+BOT_TOKEN = os.getenv("7674845797:AAFc9pErEgOsfOO4qF28kzJrGANXlICL-4g")
+API_ID = int(os.getenv("27294940"))
+API_HASH = os.getenv("67dea18182fcb410bd8c4e1a336d8c9e")
 
-# ─── Database Configuration ────────────────────────────────────────────────────
-MONGO_URI    = os.getenv("MONGO_URI",    "mongodb+srv://poisondeath1921:N8pGonrmdVx1mzBB@cluster0.3bdouge.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DATABASE_NAME = os.getenv("DATABASE_NAME", "")
+# Database Configuration
+MONGO_URI = os.getenv("mongodb+srv://poisondeath1921:N8pGonrmdVx1mzBB@cluster0.3bdouge.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DATABASE_NAME = os.getenv("DATABASE_NAME")
 
-# ─── Channel Configuration ─────────────────────────────────────────────────────
-DB_CHANNEL_ID        = int(os.getenv("DB_CHANNEL_ID",        "-1002505082306"))
-FORCE_SUB_CHANNEL    = int(os.getenv("FORCE_SUB_CHANNEL",    "-1002276280920"))
-FORCE_SUB_CHANNEL_2  = int(os.getenv("FORCE_SUB_CHANNEL_2",  "0"))
+# Channel Configuration 
+DB_CHANNEL_ID = int(os.getenv("-1002505082306"))
+FORCE_SUB_CHANNEL = int(os.getenv("-1002276280920")) # First force sub channel
+FORCE_SUB_CHANNEL_2 = int(os.getenv("-1002039617609", 0)) # Second force sub channel, defaults to 0 if not set
 
-CHANNEL_LINK   = os.getenv("CHANNEL_LINK",   "")
-CHANNEL_LINK_2 = os.getenv("CHANNEL_LINK_2", "")
+# Add a second channel link
+CHANNEL_LINK = os.getenv("CHANNEL_LINK") # First channel link
+CHANNEL_LINK_2 = os.getenv("CHANNEL_LINK_2", "") # Second channel link
 
-# ─── Bot Information ──────────────────────────────────────────────────────────
-BOT_USERNAME = os.getenv("BOT_USERNAME", "@replica_file_bot")
-BOT_NAME     = os.getenv("BOT_NAME",     "Replica file bot")
-BOT_VERSION  = "1.6"
+# Bot Information
+BOT_USERNAME = os.getenv("@replica_file_bot")
+BOT_NAME = os.getenv("Replica file bot")
+BOT_VERSION = "1.6"
 
-# ─── Privacy / Auto-Delete ─────────────────────────────────────────────────────
-PRIVACY_MODE      = os.getenv("PRIVACY_MODE", "off").lower() == "on"
-AUTO_DELETE_TIME  = int(os.getenv("AUTO_DELETE_TIME", "30"))
+# Privacy Mode Configuration and codexbotz delete time
+PRIVACY_MODE = os.getenv("PRIVACY_MODE", "off").lower() == "on"
+AUTO_DELETE_TIME = int(os.getenv("10", 30))
 
-# ─── Modiji API Key ───────────────────────────────────────────────────────────
+# Your Modiji Url Api Key Here
 MODIJI_API_KEY = os.getenv("MODIJI_API_KEY")
 if not MODIJI_API_KEY:
     print("⚠️ Warning: MODIJI_API_KEY not set in environment variables")
 
-# ─── Support Links ─────────────────────────────────────────────────────────────
-DEVELOPER_LINK = os.getenv("DEVELOPER_LINK", "")
-SUPPORT_LINK   = os.getenv("SUPPORT_LINK",   "")
+# Links
+CHANNEL_LINK = os.getenv("CHANNEL_LINK")
+DEVELOPER_LINK = os.getenv("DEVELOPER_LINK")
+SUPPORT_LINK = os.getenv("SUPPORT_LINK")
 
-# ─── Web-Ping (Koyeb/Render) ──────────────────────────────────────────────────
-WEB_SERVER = os.getenv("WEB_SERVER", "True").lower() == "true"
-PING_URL   = os.getenv("PING_URL",   "")
-PING_TIME  = int(os.getenv("PING_TIME", "0"))
+# For Koyeb/render 
+WEB_SERVER = bool(os.getenv("WEB_SERVER", True)) # make it True if deploying on koyeb/render else False
+PING_URL = os.getenv("PING_URL") # add your koyeb/render's public url
+PING_TIME = int(os.getenv("PING_TIME")) # Add time_out in seconds
 
-# ─── Admin IDs ─────────────────────────────────────────────────────────────────
-# comma-separated list in ENV, e.g. 5478765030,7038050465
+# Admin IDs - Convert space-separated string to list of integers
 ADMIN_IDS: List[int] = [
-    int(x.strip())
-    for x in os.getenv("ADMIN_IDS", "5478765030,7038050465").split(",")
-    if x.strip().isdigit()
+    int(admin_id.strip())
+    for admin_id in os.getenv("5478765030,7038050465", "").split()
+    if admin_id.strip().isdigit()
 ]
 
-# ─── File limits & types ──────────────────────────────────────────────────────
-MAX_FILE_SIZE = 2_000 * 1024 * 1024  # 2 GB
+# File size limit (2GB in bytes)
+MAX_FILE_SIZE = 2000 * 1024 * 1024
 
+# Supported file types and extensions
 SUPPORTED_TYPES = [
-    "document", "video", "audio", "photo", "voice",
-    "video_note", "animation"
+    "document",
+    "video",
+    "audio",
+    "photo",
+    "voice",
+    "video_note",
+    "animation"
 ]
 
 SUPPORTED_EXTENSIONS = [
     # Documents
     "pdf", "txt", "doc", "docx", "xls", "xlsx", "ppt", "pptx",
-    # Code & data
-    "py", "js", "html", "css", "json", "xml", "yaml", "yml", "csv", "md",
+    # Programming Files
+    "py", "js", "html", "css", "json", "xml", "yaml", "yml",
     # Archives
     "zip", "rar", "7z", "tar", "gz", "bz2",
-    # Media
-    "mp4", "mp3", "m4a", "wav", "avi", "mkv", "flv", "mov", "webm", "3gp", "m4v", "ogg", "opus",
+    # Media Files
+    "mp4", "mp3", "m4a", "wav", "avi", "mkv", "flv", "mov",
+    "webm", "3gp", "m4v", "ogg", "opus",
     # Images
     "jpg", "jpeg", "png", "gif", "webp", "bmp", "ico",
-    # Apps & executables
+    # Applications
     "apk", "exe", "msi", "deb", "rpm",
-    # Subtitles/logs
-    "srt", "sub", "log", "text"
+    # Other
+    "txt", "text", "log", "csv", "md", "srt", "sub"
 ]
 
 SUPPORTED_MIME_TYPES = [
@@ -94,7 +103,6 @@ SUPPORTED_MIME_TYPES = [
     "application/x-executable",
 ]
 
-# ─── Messages & Buttons ───────────────────────────────────────────────────────
 class Messages:
     START_TEXT = """
 🎉 Welcome to {bot_name}! 🎉
@@ -114,41 +122,62 @@ A Open Source Repo :- github.com/utkarshdubey2008/alphashare
 
 Use /help to see available commands!
 """
+
     HELP_TEXT = """
-📚 Available Commands
+📚 Available Commands  
 
-👤 User Commands:
-• /start – Start the bot
-• /help – Show this menu
-• /about – Bot details
-• /short [url] – Shorten a link (e.g. /short example.com)
-• /repo – Show GitHub repo
+👤 User Commands:  
+• /start - Start the bot  
+• /help - Show this menu  
+• /about - Bot details  
+• /short [url] - Shorten a link (e.g., /short example.com)  
+/repo 
 
-👑 Admin Commands:
-• /upload – Upload a file (reply to a file)
-• /stats – View bot stats
-• /broadcast – Message all users
-• /auto_del – Set auto-delete timer
+👑 Admin Commands:  
+• /upload - Upload a file (reply to a file)  
+• /stats - View bot statistics  
+• /broadcast - Send a message to all users  
+• /auto_del - Set auto-delete timer
+    🗑 Auto-Delete System:  
+• Files auto-delete after a set time.  
+• Modify timer using /auto_del.  
 
-🗑 Files auto-delete after the set time. Change with /auto_del.
-🔗 /batch – Group multiple files into one link.
+🔗 Batch System:  
+• /batch - Group multiple files into one link.  
+• Forward files & reply with /batch.  
+
+
+🛠 Open Source:  
+🔗 [GitHub](https://github.com/utkarshdubey2008/alphashare)  
+
+⚠️ Need Help? Contact [@adarsh2626](https://t.me/adarsh2626)  
 """
+
     ABOUT_TEXT = """
 ℹ️ About {bot_name}
 
 Version: {version}
 Developer: @seasonal_culture
+Language: Python
 Framework: Pyrogram
 
-📢 Updates & Support: https://t.me/seasonal_culture
+📢 Updates: https://t.me/seasonal_culture
+🛠 Support: https://t.me/seasonal_culture
 
 Features:
 • Secure File Sharing
 • Force Subscribe
 • Admin Controls
 • Real-time Stats
-• Auto File-Type Detection
+• Multiple File Types
+• Enhanced Security
+• Automatic File Type Detection
+
+use /repo to know more info
+
+Made with ❤️ by @seasonal_culture
 """
+
     FILE_TEXT = """
 📁 File Details
 
@@ -162,53 +191,68 @@ By: {uploader}
 🔗 Share Link:
 {share_link}
 """
+
+    FORCE_SUB_TEXT = """
+⚠️ Access Restricted!
+
+Please join our channel to use this bot:
+Bot By @seasonal_culture
+
+Click button below, then try again!
+"""
+
 class Buttons:
     def start_buttons() -> List[List[Dict[str, str]]]:
         return [
             [
-                {"text": "Help 📚",    "callback_data": "help"},
-                {"text": "About ℹ️",   "callback_data": "about"}
+                {"text": "Help 📚", "callback_data": "help"},
+                {"text": "About ℹ️", "callback_data": "about"}
             ],
             [
-                {"text": "Channel 📢",  "url": CHANNEL_LINK},
+                {"text": "Channel 📢", "url": CHANNEL_LINK},
                 {"text": "Developer 👨‍💻", "url": DEVELOPER_LINK}
             ]
         ]
+
     def help_buttons() -> List[List[Dict[str, str]]]:
         return [
             [
-                {"text": "Home 🏠",     "callback_data": "home"},
-                {"text": "About ℹ️",    "callback_data": "about"}
+                {"text": "Home 🏠", "callback_data": "home"},
+                {"text": "About ℹ️", "callback_data": "about"}
             ],
             [
-                {"text": "Channel 📢",  "url": CHANNEL_LINK}
+                {"text": "Channel 📢", "url": CHANNEL_LINK}
             ]
         ]
+
     def about_buttons() -> List[List[Dict[str, str]]]:
         return [
             [
-                {"text": "Home 🏠",     "callback_data": "home"},
-                {"text": "Help 📚",     "callback_data": "help"}
+                {"text": "Home 🏠", "callback_data": "home"},
+                {"text": "Help 📚", "callback_data": "help"}
             ],
             [
-                {"text": "Channel 📢",  "url": CHANNEL_LINK}
+                {"text": "Channel 📢", "url": CHANNEL_LINK}
             ]
         ]
+
     def file_buttons(file_uuid: str) -> List[List[Dict[str, str]]]:
         return [
             [
                 {"text": "Download 📥", "callback_data": f"download_{file_uuid}"},
-                {"text": "Share 🔗",    "callback_data": f"share_{file_uuid}"}
+                {"text": "Share 🔗", "callback_data": f"share_{file_uuid}"}
             ],
             [
-                {"text": "Channel 📢",  "url": CHANNEL_LINK}
+                {"text": "Channel 📢", "url": CHANNEL_LINK}
             ]
         ]
+
+
 class Progress:
-    PROGRESS_BAR       = "█"
+    PROGRESS_BAR = "█"
     EMPTY_PROGRESS_BAR = "░"
-    PROGRESS_TEXT      = """
-{0} {1}%
+    PROGRESS_TEXT = """
+{0} {1}% 
 
 ⚡️ Speed: {2}/s
 💫 Done: {3}
