@@ -217,8 +217,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <details>
 <summary><b>📞 Support</b></summary>
 
-- Channel: [@Thealphabotz](https://t.me/Thealphabotz)
-- Developer: [@adarsh2626](https://t.me/adarsh2626)
+- Channel: [@seasonal culture](https://t.me/seasonal_culture)
+- Developer: [@adarsh2626](https://t.me/seasonal_culture)
 
 </details>
 
@@ -243,5 +243,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <p align="center">
   <b>Last Updated: 2025-03-19 16:42:54 UTC</b>
   <br>
-  <i>Made with ❤️ by <a href="https://t.me/adarsh2626">Adarsh</a></i>
+  <i>Made with ❤️ by <a href="https://t.me/seasonal_culture">Culture</a></i>
 </p>
