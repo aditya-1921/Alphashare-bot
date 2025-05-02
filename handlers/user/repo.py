@@ -11,7 +11,7 @@ async def repo_command(client: Client, message: Message):
 
     buttons = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("📂 Source", url="https://github.com/utkarshdubey2008/alphashare")],
+            [InlineKeyboardButton("📂 Source", url="https://gifthub.com/aditya1921")],
             [
                 InlineKeyboardButton("📢 Updates", url="https://t.me/seasonal_culture"),
                 InlineKeyboardButton("💬 Support", url="https://t.me/seasonal_culture")
