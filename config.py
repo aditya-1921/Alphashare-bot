@@ -141,7 +141,7 @@ class Messages:
 ℹ️ **About {bot_name}**
 
 **Version:** `{version}`
-**Developer:** @adarsh2626
+**Developer:** @seasonal_culture
 **Language:** Python
 **Framework:** Pyrogram
 
