@@ -222,12 +222,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 </details>
 
-<details>
-<summary><b>🙏 Credits</b></summary>
-
-- [Pyrogram](https://github.com/pyrogram/pyrogram)
-- [Culture](https://t.me/seasonal_culture)
-- [All Contributors](https://github.com/utkarshdubey2008/AlphaShare/graphs/contributors)
 
 </details>
 
