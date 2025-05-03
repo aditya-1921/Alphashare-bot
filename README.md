@@ -3,8 +3,8 @@
 </h1>
  
 <p align="center">
-  <a href="https://github.com/utkarshdubey2008/AlphaShare">
-    <img src="https://envs.sh/SlS.jpg" alt="Alpha Share Bot" width="500">
+  <a href="https://github.com/aditya1921">
+    <img src="https://envs.sh/SlS.jpg" alt="Replica Share Bot" width="500">
   </a>
   <br>
   <b>A Powerful File Sharing Bot for Telegram</b>
@@ -231,17 +231,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 </details>
 
-<details>
-<summary><b>Contributors</b></summary>
-
-- @trashxrd [Telegram](https://t.me/trashxrd)
-- @nxghtz [Telegram](https://t.me/nxghtz)
-- @Mak0912 [Telegram](https://t.me/Mak0912)
-
-</details>
-
 <p align="center">
   <b>Last Updated: 2025-03-19 16:42:54 UTC</b>
   <br>
-  <i>Made with ❤️ by <a href="https://t.me/Seasonal_culture">Adarsh</a></i>
-</p>
