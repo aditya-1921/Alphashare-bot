@@ -110,9 +110,7 @@ class Messages:
 ɪ ᴄᴀɴ ᴘʀᴏᴠɪᴅᴇ ᴘʀɪᴠᴀᴛᴇ ꜰɪʟᴇꜱ ᴛʜʀᴏᴜɢʜ ᴀ ꜱᴘᴇᴄɪꜰɪᴄ ʟɪɴᴋ....!
 ᴘᴏᴡᴇʀᴇᴅ ʙʏ 𝗌ᴇᴀsᴏɴᴀʟ ᴄᴜʟᴛᴜʀᴇ.
 
-"""
 
-    HELP_TEXT = """
 📚 **Available Commands**  
 
 👤 **User Commands:**  
